@@ -1,0 +1,186 @@
+:root {
+    --primary-color: black;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --bg-color: #f0f4f8;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+.navbar {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+.navbar-brand img {
+    max-height: 40px;
+}
+.navbar-nav .nav-link {
+    color: #fff;
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+.custom-ul li:hover{
+    background:var(--primary-color);
+    border-radius: 25px;
+    transition:1s;
+}
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    padding: 100px 0 60px;
+    text-align: center;
+    /* font-weight: 1000; */
+    /* font-size: 10px; */
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+.service-card, .opportunity-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    height: 100%;
+}
+.service-card:hover, .opportunity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.roadmap {
+    padding: 6rem 0;
+    background-color: #fff;
+}
+.roadmap-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+.roadmap-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-color);
+    transform: translateY(-50%);
+}
+.roadmap-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+.roadmap-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+}
+.roadmap-content {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+.roadmap-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.roadmap-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+.roadmap-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.roadmap-item:nth-child(odd) .roadmap-content {
+    margin-bottom: 4rem;
+}
+.roadmap-item:nth-child(even) .roadmap-content {
+    margin-top: 4rem;
+}
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .roadmap-line {
+        left: 0;
+    }
+    .roadmap-item::before {
+        left: 0;
+    }
+    .popup-message {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1000;
+      }
+      
+      .popup-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 80%;
+        width: 300px;
+      }
+      
+      .popup-message.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .popup-message:not(.show) {
+        display: none;
+      }
+      
+      .popup-message:not(.show) .popup-content {
+        display: none;
+      }
+}

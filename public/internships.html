@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEPRO Technologies - Internship Opportunities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <style>
+        
+        /* Base styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f0f4f8;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero section styles */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 10rem 0 6rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+        }
+
+        /* Internship section styles */
+        .internships {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+        .internships-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .internship-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .internship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .internship-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .internship-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Roadmap section styles */
+        .roadmap {
+            padding: 6rem 0;
+            background-color: var(--bg-color);
+        }
+        .roadmap-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .roadmap-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+            transform: translateY(-50%);
+        }
+        .roadmap-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+        }
+        .roadmap-item {
+            flex: 1;
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+        }
+        .roadmap-content {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .roadmap-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        .roadmap-item img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .roadmap-item:nth-child(odd) .roadmap-content {
+            margin-bottom: 4rem;
+        }
+        .roadmap-item:nth-child(even) .roadmap-content {
+            margin-top: 4rem;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .footer-links {
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .internships-grid {
+                grid-template-columns: 1fr;
+            }
+            .roadmap-items {
+                flex-direction: column;
+            }
+            .roadmap-item {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            .roadmap-item:nth-child(odd) .roadmap-content,
+            .roadmap-item:nth-child(even) .roadmap-content {
+                margin: 0;
+            }
+            .roadmap-line {
+                height: 100%;
+                width: 4px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.png" alt="CODEPRO Logo" class="navbar-logo">
+                <span class="navbar-text ml-3"><i>Implementing Digital World</i></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myMenu">
+                <ul class="navbar-nav ml-auto custom-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#opportunities" class="nav-link">Internships</a></li>
+                    <li class="nav-item"><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Internship Opportunities</h1>
+                <p>Kickstart your career with hands-on experience in cutting-edge technologies</p>
+            </div>
+        </section>
+
+        <section class="internships">
+            <div class="container">
+                <h2 class="section-title">Available Internships</h2>
+                <div class="internships-grid">
+                    <div class="internship-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Software Development</h3>
+                        <p>Gain experience in full-stack development using modern technologies</p>
+                        <a href="https://forms.gle/your-google-form-url" class="btn btn-primary" target="_blank">Apply Now</a>
+                    </div>
+                    <div class="internship-card">
+                        <i class="fas fa-cloud"></i>
+                        <h3>JAVA Internship</h3>
+                        <p>Learn to design and implement scalable cloud solutions</p>
+                        <a href="https://forms.gle/BgMCg12PNtLAaNHL9" class="btn btn-primary" target="_blank">Apply Now</a>
+                    </div>
+                    <div class="internship-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Web Developer</h3>
+                        <p>Explore machine learning and AI applications in real-world scenarios</p>
+                        <a href="https://forms.gle/your-google-form-url" class="btn btn-primary" target="_blank">Apply Now</a>
+                    </div>
+                    <div class="internship-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Python Developer</h3>
+                        <p>Develop skills in protecting digital assets and infrastructure</p>
+                        <a href="https://forms.gle/your-google-form-url" class="btn btn-primary" target="_blank">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap">
+            <div class="container">
+                <h2 class="section-title">Roadmap of Internship Journey</h2>
+                <div class="roadmap-container">
+                    <div class="roadmap-line"></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item">
+                            <div class="roadmap-content">
+                                <h3>1. Registration</h3>
+                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Registration">
+                                <p>Begin your journey by registering for our internship program.</p>
+                            </div>
+                        </div>
+                        <div class="roadmap-item">
+                            <div class="roadmap-content">
+                                <h3>2. Work on Live Projects</h3>
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Live Projects">
+                                <p>Gain real-world experience by contributing to ongoing projects.</p>
+                            </div>
+                        </div>
+                        <div class="roadmap-item">
+                            <div class="roadmap-content">
+                                <h3>3. Hands-on Project Learning</h3>
+                                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Project Learning">
+                                <p>Develop your skills through guided project-based learning.</p>
+                            </div>
+                        </div>
+                        <div class="roadmap-item">
+                            <div class="roadmap-content">
+                                <h3>4. Project Evaluation and Certification</h3>
+                                <img src="https://images.unsplash.com/photo-1523289333742-be1143f6b766?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Evaluation and Certification">
+                                <p>Showcase your achievements and receive recognition for your hard work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CODEPRO Technologies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = (elements, className) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(className);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        };
+
+        animateOnScroll(document.querySelectorAll('.internship-card, .roadmap-item'), 'animate-fade-in');
+    </script>
+</body>
+</html>
